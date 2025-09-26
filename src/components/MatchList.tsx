@@ -68,7 +68,7 @@ export const MatchList = () => {
     <div className="space-y-12">
       <div className="text-center space-y-4">
         <h1 className="text-3xl font-light text-foreground tracking-wide">
-          European Football Today
+          Top Soccer Matches
         </h1>
         <p className="text-muted-foreground text-base font-light">
           {currentDate}
