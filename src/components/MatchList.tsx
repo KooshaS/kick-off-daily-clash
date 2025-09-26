@@ -65,33 +65,29 @@ export const MatchList = () => {
   });
 
   return (
-    <div className="space-y-6">
-      <div className="text-center space-y-2">
-        <h1 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+    <div className="space-y-12">
+      <div className="text-center space-y-4">
+        <h1 className="text-3xl font-light text-foreground tracking-wide">
           European Football Today
         </h1>
-        <p className="text-muted-foreground text-lg">
+        <p className="text-muted-foreground text-base font-light">
           {currentDate}
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Matches featuring Europe's top 25 clubs
         </p>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-2">
         {todayMatches.map((match) => (
           <MatchCard key={match.id} match={match} />
         ))}
       </div>
 
       {todayMatches.length === 0 && (
-        <div className="text-center py-12">
-          <div className="text-6xl mb-4">⚽</div>
-          <h3 className="text-xl font-semibold text-muted-foreground mb-2">
+        <div className="text-center py-16">
+          <h3 className="text-lg font-light text-muted-foreground mb-2">
             No matches today
           </h3>
-          <p className="text-muted-foreground">
-            Check back tomorrow for more European football action
+          <p className="text-sm text-muted-foreground font-light">
+            Check back tomorrow for more matches
           </p>
         </div>
       )}

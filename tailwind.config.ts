@@ -60,10 +60,9 @@ export default {
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
-        'gradient-card': 'var(--gradient-card)',
       },
       boxShadow: {
-        'glow': 'var(--shadow-glow)',
+        'subtle': 'var(--shadow-subtle)',
         'card': 'var(--shadow-card)',
       },
       transitionTimingFunction: {

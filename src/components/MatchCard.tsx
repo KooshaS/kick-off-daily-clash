@@ -41,39 +41,38 @@ export const MatchCard = ({ match }: MatchCardProps) => {
   };
 
   return (
-    <Card className="bg-gradient-card hover:bg-card transition-smooth border-border hover:shadow-glow p-6 group cursor-pointer">
+    <Card className="bg-card hover:shadow-card transition-smooth border-border p-8 group cursor-pointer">
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4 flex-1">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center text-xs font-bold">
-              {match.homeTeam.substring(0, 3).toUpperCase()}
-            </div>
-            <span className="font-semibold text-foreground group-hover:text-primary transition-smooth">
+        <div className="flex items-center space-x-8 flex-1">
+          <div className="text-center min-w-[120px]">
+            <div className="text-sm font-medium text-foreground mb-1">
               {match.homeTeam}
-            </span>
+            </div>
           </div>
           
-          <div className="text-muted-foreground font-mono text-sm">
-            {match.score || 'vs'}
+          <div className="text-center min-w-[80px]">
+            <div className="text-lg font-mono text-foreground">
+              {match.score || '—'}
+            </div>
+            <div className="text-xs text-muted-foreground mt-1">
+              {getStatusText(match.status)}
+            </div>
           </div>
           
-          <div className="flex items-center space-x-3">
-            <span className="font-semibold text-foreground group-hover:text-primary transition-smooth">
+          <div className="text-center min-w-[120px]">
+            <div className="text-sm font-medium text-foreground mb-1">
               {match.awayTeam}
-            </span>
-            <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center text-xs font-bold">
-              {match.awayTeam.substring(0, 3).toUpperCase()}
             </div>
           </div>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <Badge variant="secondary" className="text-xs">
+        <div className="text-right min-w-[100px]">
+          <div className="text-xs text-muted-foreground">
             {match.competition}
-          </Badge>
-          <Badge className={`${getStatusColor(match.status)} text-xs font-mono`}>
-            {getStatusText(match.status)}
-          </Badge>
+          </div>
+          {match.status === 'live' && (
+            <div className="inline-block w-2 h-2 bg-destructive rounded-full mt-1"></div>
+          )}
         </div>
       </div>
     </Card>
